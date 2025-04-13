@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  margin: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.nav-element {
+  list-style: none;
+  font-family: monospace;
+  font-size: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  border: 2px black solid;
+  padding: 10px;
+}
+
+.main {
+  font-family: monospace;
+  margin: 50px auto;
+}
+
+.title {
+  font-size: 60px;
+}
+
+.instruction {
+  font-size: 30px;
+  margin-top: -20px;
+}

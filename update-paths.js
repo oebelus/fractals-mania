@@ -9,18 +9,20 @@ function updateScriptPaths(directory) {
     if (file.endsWith(".html")) {
       let content = fs.readFileSync(filePath, "utf8");
       content = content.replace(
-        /(href|src)=["']([^"']*)["']/g,
-        (match, attr, urlPath) => {
-          if (
-            urlPath.startsWith("http") ||
-            urlPath.startsWith("#") ||
-            urlPath.includes("fractals-mania")
-          ) {
-            return match;
-          }
-          return `${attr}="/fractals-mania/${urlPath.replace(/^\//, "")}"`;
-        }
+        'src="../src/main.ts"',
+        'src="../assets/index-CABlTxDV.js"'
       );
+
+      content = content.replace(
+        'href="/pages/',
+        'href="/fractals-mania/pages/'
+      );
+
+      content = content.replace(
+        'href="/style.css"',
+        'href="/fractals-mania/style.css/"'
+      );
+
       fs.writeFileSync(filePath, content);
     }
   });

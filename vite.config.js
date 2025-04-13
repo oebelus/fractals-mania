@@ -8,7 +8,7 @@ export default defineConfig({
       name: "update-paths",
       closeBundle() {
         // Run the script after the build completes
-        exec("ts-node update-paths.js", (error, stdout, stderr) => {
+        exec("node update-paths.js", (error, stdout, stderr) => {
           if (error) {
             console.error(`Error: ${error.message}`);
             return;

@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-const distPath = "./dist/pages";
-
 function updateScriptPaths(directory) {
   const files = fs.readdirSync(directory);
   files.forEach((file) => {

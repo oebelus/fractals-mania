@@ -7,19 +7,28 @@ function updateScriptPaths(directory) {
   const files = fs.readdirSync(directory);
   files.forEach((file) => {
     const filePath = path.join(directory, file);
-    const stat = fs.statSync(filePath);
-    if (stat.isDirectory()) {
-      updateScriptPaths(filePath);
-    } else if (file.endsWith(".html")) {
+
+    if (file.endsWith(".html")) {
       let content = fs.readFileSync(filePath, "utf8");
       content = content.replace(
         'src="../src/main.ts"',
         'src="../assets/index-CABlTxDV.js"'
       );
+
+      content = content.replace(
+        'href="/pages/',
+        'href="/fractals-mania/pages/'
+      );
+
+      content = content.replace(
+        'href="/style.css"',
+        'href="/fractals-mania/style.css/"'
+      );
+
       fs.writeFileSync(filePath, content);
     }
   });
 }
 
-updateScriptPaths(distPath);
-console.log("HTML script paths updated successfully!");
+updateScriptPaths("./dist/pages");
+updateScriptPaths("./dist");

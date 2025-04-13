@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { exec } from "child_process";
 
 export default defineConfig({
-  base: "/",
+  base: "/fractals-mania/",
   plugins: [
     {
       name: "update-paths",

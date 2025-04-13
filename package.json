@@ -6,17 +6,23 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "postbuild": "ts-node update-paths.js",
+    "build:complete": "npm run build && npm run postbuild",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@types/dat.gui": "^0.7.13",
+    "@types/node": "^22.14.1",
     "@types/three": "^0.175.0",
     "dat.gui": "^0.7.9",
     "typescript": "~5.7.2",
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "vite-plugin-transform": "^2.0.1"
   },
   "dependencies": {
     "fractals": "file:",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
     "three": "^0.175.0"
   }
 }

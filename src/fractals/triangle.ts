@@ -1,5 +1,5 @@
-import { Pyramid } from "../structures/Shape";
 import * as THREE from "three";
+import { Pyramid } from "../structures/Pyramid";
 
 let pyramids: THREE.LineSegments[] = [];
 
